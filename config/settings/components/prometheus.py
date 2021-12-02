@@ -9,3 +9,5 @@ MIDDLEWARE_FIRST = [
 MIDDLEWARE_LAST = [
     "django_prometheus.middleware.PrometheusAfterMiddleware",
 ]
+
+PROMETHEUS_EXPORT_MIGRATIONS = False

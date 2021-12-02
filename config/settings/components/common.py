@@ -11,10 +11,11 @@ INSTALLED_APPS = [
     *healthcheck.INSTALLED_APPS,
     # My App
     "apps.utils",
+    "apps.fake",
 ]
 
 MIDDLEWARE = [
-    *prometheus.MIDDLEWARE_FIRST,
+    # *prometheus.MIDDLEWARE_FIRST,
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -22,5 +23,5 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    *prometheus.MIDDLEWARE_LAST,
+    # *prometheus.MIDDLEWARE_LAST,
 ]
