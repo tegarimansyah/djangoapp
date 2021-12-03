@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 from health_check.views import MainView
-from apps.fake.views import delay, random
+from apps.fake.views import delay, random, setversion
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -25,4 +25,5 @@ urlpatterns = [
     path("health/", MainView.as_view(), name="health_check_custom"),
     url(r"^delay/$", delay, name="delay"),
     url(r"^random/$", random, name="random"),
+    url(r"^setversion/$", setversion, name="setversion"),
 ]
