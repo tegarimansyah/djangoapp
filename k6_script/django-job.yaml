@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: django-prome-performance-test
+spec:
+  template:
+    spec:
+      containers:
+      - name: django-prome-performance-test
+        image: loadimpact/k6:0.33.0
+        command: ["k6",  "run", "--out", "influxdb=http://103.117.207.239:8086/test_k6","/app/django.js"]
+        volumeMounts:
+        - name: my-volume
+          mountPath: /app
+      volumes:
+      - name: my-volume
+        configMap:
+         name: django-test
+      restartPolicy: Never
+
+
