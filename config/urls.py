@@ -21,8 +21,8 @@ from apps.fake.views import delay, random, setversion
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("django_prometheus.urls")),
-    path("health/", MainView.as_view(), name="health_check_custom"),
+    path("", include("django_prometheus.urls")),  # /metrics
+    path("health/", MainView.as_view(), name="health_check_custom"),  # /health
     url(r"^delay/$", delay, name="delay"),
     url(r"^random/$", random, name="random"),
     url(r"^setversion/$", setversion, name="setversion"),
